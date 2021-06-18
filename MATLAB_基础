@@ -95,3 +95,53 @@ MATLAB R2016a---------------a表示上半年版本，b表示下半年版本；
 2、for...end
 3、while...end
 4、switch...case...end
+---------------------------------------二维绘图------------------------------------------
+%% 二维绘图
+x=0:0.01:2*pi;
+y=sin(x);
+figure%建立一个幕布
+plot(x,y)%绘制二维图
+title('y=sin(x)')%加标题
+xlabel('x')%X轴表示X
+ylabel('sin(x)')%Y轴表示sinx
+xlim([0,2*pi])%设置X轴极限为0-2pi
+%颜色
+    %红绿蓝黄rgby
+    %粉青白黑mcwk
+%线型
+    %实线-    虚线--    冒号线：   点画线-.
+
+x=0:0.01:20;
+y1=200*exp(-0.05*x).*sin(x);
+y2=0.8*exp(-0.5*x).*sin(10*x);
+figure
+[AX,H1,H2]=plotyy(x,y1,x,y2,'plot');%公用一个X坐标系，在y上有不同取值
+set(get(AX(1),'Ylabel'),'String','Slow Decay')
+set(get(AX(2),'Ylabel'),'String','Fast Decay')
+xlabel('Time(\musec)')
+title('Multiple Decay Rates')
+set(H1,'LineStyle','--')
+set(H2,'LineStyle',':')
+---------------------------------------三维绘图------------------------------------------
+%% 三维立体绘图
+t=0:pi/50:10*pi;
+plot3(sin(t),cos(t),t)
+xlabel('sin(t)')
+ylabel('cos(t)')
+zlabel('t')
+%hold on---->同一幕布中绘制多条线
+%hold off--->结束
+
+grid on%背景加网格线
+axis square%各方向正方形化
+
+%% 图形的保存与导出
+%（1） Edit-->Copy Figure;
+%（2）Toolbar->Save;
+%（3）print('-depsc','')
+%（4）File->Export Setup
+
+%% 双峰函数
+[x,y,z]=peaks(30);
+mesh(x,y,z);
+grid
