@@ -1,0 +1,8 @@
+1、单纯型的任何排列都是单纯型；
+2、二维空间的单纯型是三角形；三维空间的单纯型是四面体；
+
+Nelder-Mead算法，从函数阈的单纯型开始被最小化，之后用五种不同的方式修改单纯型，直到单纯型非常平坦，此时最小值是函数最小值的顶点。
+通常当发现最小值，单纯型也最小。
+单纯型的五种变化：Reflection、Expansion、Outward Contraction、Inward Contraction、Shrink
+
+
